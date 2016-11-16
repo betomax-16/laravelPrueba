@@ -14,6 +14,7 @@
 		<div class="col-sm-4 text-left">
 			<form action="" method="post">
 		        <div class="form-group">
+		        	<p> HOLA MUNDO </p>
 		        	<label for="categoria"> <br> Escriba la nueva categoria que Desea agregar: </label>
 		        	<input type="text" class="form-control" id="txtCategoria" placeholder="Categoria a Agregar"> <br>
 		        	<button type="submit" class="btn btn-default">Guardar</button>
