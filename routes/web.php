@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin/usuario/index');
+    return view('welcome');
 });
 
 /*Route::get('/hola/{nombre?}', function($nombre='desconocido') {
