@@ -55,7 +55,11 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+<<<<<<< HEAD
                                     {{ Auth::user()->name }} <span class="caret"></span>
+=======
+                                    {{ Auth::user()->nombre }} <span class="caret"></span>
+>>>>>>> master
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -83,7 +87,12 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+<<<<<<< HEAD
     <script src="{{ asset('js/jquery-1.9.1.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+=======
+    <script src="{{ asset('js/jquery-1.9.1.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" charset="utf-8"></script>
+>>>>>>> master
 </body>
 </html>
