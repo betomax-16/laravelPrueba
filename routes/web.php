@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin/usuario/index');
+    return view('welcome');
 });
 
 /*Route::get('/hola/{nombre?}', function($nombre='desconocido') {
@@ -29,3 +29,7 @@ Route::group(['prefix' => 'prueba'], function(){
 Route::group(['prefix' => 'admin'], function(){
   Route::resource('usuarios','UsuariosController');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

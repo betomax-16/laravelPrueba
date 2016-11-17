@@ -36,6 +36,7 @@ class AddEtiquetasTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('articulo_etiqueta');
         Schema::dropIfExists('etiquetas');
     }
 }
