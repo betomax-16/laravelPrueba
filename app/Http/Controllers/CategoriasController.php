@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoria;
 
-class PruebaController extends Controller
+class CategoriasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class PruebaController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -23,7 +24,8 @@ class PruebaController extends Controller
      */
     public function create()
     {
-        //
+      $categorias = Categoria::all();
+      return view('categoria/Categoria')->with('categorias', $categorias);
     }
 
     /**
@@ -34,7 +36,10 @@ class PruebaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria = new Categoria($request->all());
+        $categoria->save();
+        flash('Se ha registrado '.$categoria->nombre.' de manera exitosa!', 'success');
+        return redirect()->route('categorias.create');
     }
 
     /**
