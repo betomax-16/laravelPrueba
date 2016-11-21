@@ -14,11 +14,32 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{ route('usuarios.create') }}">Usuarios</a></li>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Articulos</a></li>
-        <li><a href="#">Imagenes</a></li>
-        <li><a href="#">Etiquetas</a></li>
+        @if(Auth::user())
+          <li><a href="{{ route('usuarios.create') }}">Usuarios</a></li>
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Articulos</a></li>
+          <li><a href="#">Imagenes</a></li>
+          <li><a href="#">Etiquetas</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  {{ Auth::user()->nombre }} <span class="caret"></span>
+              </a>
+
+              <ul class="dropdown-menu" role="menu">
+                  <li>
+                      <a href="{{ url('/logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                          Logout
+                      </a>
+
+                      <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                      </form>
+                  </li>
+              </ul>
+          </li>
+        @endif
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -19,11 +19,8 @@ Route::get('/', function () {
   return 'hola mundo!! by: '.$nombre;
 });*/
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
   Route::resource('usuarios','UsuariosController');
-});
-
-Route::group(['prefix' => 'admin'], function(){
   Route::resource('categorias','CategoriasController');
 });
 
