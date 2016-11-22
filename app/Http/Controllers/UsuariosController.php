@@ -12,10 +12,10 @@ class UsuariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //dd('hola');
-        $usuarios = Usuario::orderBy('id', 'ASC')->paginate(5);
+        $usuarios = Usuario::Buscar($request->nombre)->orderBy('id', 'ASC')->paginate(5);
         return view('admin/usuario/index')->with('usuarios', $usuarios);
     }
 

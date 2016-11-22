@@ -35,4 +35,11 @@ class Usuario extends Authenticatable
     {
       return $this->hasMany('App\Articulo', 'idUsuario');
     }
+    /*
+    Metodo scope para poder hacer busqueda (estos metodos siempre deben ir con el nombre scope)
+    */
+    public function scopeBuscar($query, $nombre)
+    {
+      return $query->where('nombre', 'LIKE', "%$nombre%");
+    }
 }

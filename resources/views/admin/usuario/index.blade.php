@@ -15,6 +15,12 @@
     </div>
 </div>
   <a href="{{ route('usuarios.create') }}" class="btn btn-info">Registrar Nuevo Usuario</a>
+  {!! Form::open(['route' => 'usuarios.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
+  <div class="input-group">
+    {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'Buscar...', 'aria-decribedBy' => 'search']) !!}
+    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+  </div>
+  {!! Form::close() !!}
   <table class="table table-striped">
     <thead>
       <th>ID</th>
